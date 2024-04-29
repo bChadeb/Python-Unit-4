@@ -1,12 +1,16 @@
 {% extends "home.html" %}
+
 {% block main %}
 <div>
-    <table >
-        <th>Team Names</th>
-            {% for team in teams %}
+    <table>
+        <tr>
+            <th>Team Names</th>
+        </tr>
+        {% for team in teams %}
             <tr>
                 <td>{{ team.team_name }}</td>
             </tr>
-            {% endfor %}
-        </table>
+        {% endfor %}
+    </table>
+</div>
 {% endblock %}

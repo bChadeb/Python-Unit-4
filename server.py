@@ -47,6 +47,18 @@ def add_project():
     else:
         print("The form failed to validate upon submitting")
         return redirect(url_for("home"))
+    
+@app.route("/projects")
+def projects():
+    user_projects = User.query.get(user_id).projects
+    return render_template("projects.html", projects=user_projects)
+
+@app.route("/teams")
+def teams():
+    user_teams = User.query.get(user_id).teams
+    return render_template("teams.html", teams=user_teams)
+
+
 
 if __name__ == "__main__":
     connect_to_db(app)
